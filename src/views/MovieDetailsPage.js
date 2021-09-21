@@ -1,4 +1,4 @@
-import { Component, lazy } from 'react';
+import { Component, Suspense, lazy } from 'react';
 import { NavLink, Redirect, Route, Switch } from 'react-router-dom';
 import MovieApi from '../service/movie-api';
 import Button from '../components/Button';
@@ -110,12 +110,13 @@ class MovieDetailsPage extends Component {
               </NavLink>
             </li>
           </ul>
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Switch>
+              <Route exact path={`${match.path}/cast`} component={Cast} />
 
-          <Switch>
-            <Route exact path={`${match.path}/cast`} component={Cast} />
-
-            <Route exact path={`${match.path}/reviews`} component={Reviews} />
-          </Switch>
+              <Route exact path={`${match.path}/reviews`} component={Reviews} />
+            </Switch>
+          </Suspense>
         </div>
       </>
     );
