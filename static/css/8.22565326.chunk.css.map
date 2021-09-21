@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/Reviews/Reviews.module.css"],"names":[],"mappings":"AAIA,kDACK,gBACL","file":"8.22565326.chunk.css","sourcesContent":[".ReviewsList {\r\n  margin: 10px 20px;\r\n}\r\n\r\n.Title {\r\n     margin: 10px 20px;\r\n}"]}
