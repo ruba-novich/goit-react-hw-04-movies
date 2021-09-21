@@ -8,10 +8,18 @@ import Loader from './components/Loader';
 import './styles.css';
 import 'modern-normalize/modern-normalize.css';
 
-const HomePage = lazy(() => import('./views/HomePage'));
-const MoviesPage = lazy(() => import('./views/MoviesPage'));
-const MovieDetailsPage = lazy(() => import('./views/MovieDetailsPage'));
-// const NotFoundPage = lazy(() => import('./views/NotFoundPage'));
+const HomePage = lazy(() =>
+  import('./views/HomePage' /* webpackChunkName: "home-page" */),
+);
+const MoviesPage = lazy(() =>
+  import('./views/MoviesPage' /* webpackChunkName: "movies-page" */),
+);
+const MovieDetailsPage = lazy(() =>
+  import(
+    './views/MovieDetailsPage' /* webpackChunkName: "movieDetails-page" */
+  ),
+);
+// const NotFoundPage = lazy(() => import('./views/NotFoundPage' /* webpackChunkName: "notFound-page" */));
 
 const App = () => {
   return (
